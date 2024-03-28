@@ -1,0 +1,146 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/Roboto-Regular.ttf');
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Roboto';
+  font-weight: 400;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  background: #c0dbd9;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.header {
+  background: #7faff7;
+  padding: 30px;
+}
+
+.header__btn {
+  color: #fff;
+  text-decoration: none;
+  background: #a5c7f9;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+
+.main__items {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: minmax(190px, 390px) minmax(290px, 590px) minmax(
+      60px,
+      160px
+    );
+  grid-template-rows: repeat(2, 198px);
+  grid-template-areas:
+    'one one one'
+    'two two three';
+  counter-reset: mainCounter;
+  margin: 15px auto;
+  background: #b3f95a;
+}
+
+.main__item {
+  background: #8ad191;
+}
+
+.main__item--fourth {
+  grid-area: two;
+}
+
+.main__item--fifth {
+  grid-area: three;
+}
+
+.main__item:before {
+  height: 198px;
+  font-size: 53px;
+  line-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  counter-increment: mainCounter;
+  content: counter(mainCounter);
+}
+
+.second__items {
+  background: #88b5bf;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.second__item {
+  background: #0d89b0;
+  width: 255px;
+  height: 199px;
+}
+
+.popup {
+  position: fixed;
+  inset: 0 0 0 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+.popup__inner {
+  position: relative;
+  z-index: 1;
+  width: 400px;
+  height: 400px;
+  background: #fff;
+  font-size: 53px;
+  line-height: 62px;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup__close {
+  background: #7faff6;
+  border-radius: 5px;
+  width: 43px;
+  height: 39px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.popup__content {
+  margin: 0;
+}
+
+.popup:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.footer {
+  background: #7faff7;
+  height: 100px;
+}
